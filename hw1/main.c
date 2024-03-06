@@ -16,16 +16,18 @@ int main() {
 
     printf("Matrix 1:\n");
     printMatrix(mat1);
-    printf("\n");
 
     printf("Matrix 2:\n");
     printMatrix(mat2);
-    printf("\n");
 
-    Matrix* result_transpose = transposeMatrix(mat1);
+    Matrix* result_transpose1 = transposeMatrix(mat1);
+    Matrix* result_transpose2 = transposeMatrix(mat2);
     printf("Transpose of matrix 1:\n");
-    printMatrix(result_transpose);
-    freeMatrix(result_transpose);
+    printMatrix(result_transpose1);
+    freeMatrix(result_transpose1);
+    printf("Transpose of matrix 2:\n");
+    printMatrix(result_transpose2);
+    freeMatrix(result_transpose2);
 
     Matrix* result_add = addMatrix(mat1, mat2);
     if (result_add != NULL) {

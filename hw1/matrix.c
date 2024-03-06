@@ -70,4 +70,5 @@ void printMatrix(Matrix* mat) {
         }
         printf("\n");
     }
+    printf("\n");
 }
