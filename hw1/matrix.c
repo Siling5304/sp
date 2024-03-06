@@ -21,13 +21,14 @@ void freeMatrix(Matrix* mat) {
     free(mat);
 }
 
-void printMatrix(Matrix* mat) {
+Matrix* transposeMatrix(Matrix* mat) {
+    Matrix* result = createMatrix(mat->cols, mat->rows);
     for (int i = 0; i < mat->rows; i++) {
         for (int j = 0; j < mat->cols; j++) {
-            printf("%f ", mat->data[i][j]);
+            result->data[j][i] = mat->data[i][j];
         }
-        printf("\n");
     }
+    return result;
 }
 
 Matrix* addMatrix(Matrix* mat1, Matrix* mat2) {
@@ -39,16 +40,6 @@ Matrix* addMatrix(Matrix* mat1, Matrix* mat2) {
     for (int i = 0; i < mat1->rows; i++) {
         for (int j = 0; j < mat1->cols; j++) {
             result->data[i][j] = mat1->data[i][j] + mat2->data[i][j];
-        }
-    }
-    return result;
-}
-
-Matrix* transposeMatrix(Matrix* mat) {
-    Matrix* result = createMatrix(mat->cols, mat->rows);
-    for (int i = 0; i < mat->rows; i++) {
-        for (int j = 0; j < mat->cols; j++) {
-            result->data[j][i] = mat->data[i][j];
         }
     }
     return result;
@@ -70,4 +61,13 @@ Matrix* multiplyMatrix(Matrix* mat1, Matrix* mat2) {
         }
     }
     return result;
+}
+
+void printMatrix(Matrix* mat) {
+    for (int i = 0; i < mat->rows; i++) {
+        for (int j = 0; j < mat->cols; j++) {
+            printf("%f ", mat->data[i][j]);
+        }
+        printf("\n");
+    }
 }

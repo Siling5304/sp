@@ -22,17 +22,17 @@ int main() {
     printMatrix(mat2);
     printf("\n");
 
+    Matrix* result_transpose = transposeMatrix(mat1);
+    printf("Transpose of matrix 1:\n");
+    printMatrix(result_transpose);
+    freeMatrix(result_transpose);
+
     Matrix* result_add = addMatrix(mat1, mat2);
     if (result_add != NULL) {
         printf("Result of matrix addition:\n");
         printMatrix(result_add);
         freeMatrix(result_add);
     }
-
-    Matrix* result_transpose = transposeMatrix(mat1);
-    printf("Transpose of matrix 1:\n");
-    printMatrix(result_transpose);
-    freeMatrix(result_transpose);
 
     Matrix* result_multiply = multiplyMatrix(mat1, mat2);
     if (result_multiply != NULL) {
