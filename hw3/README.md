@@ -1,3 +1,4 @@
+```
 User@DESKTOP-CSLF8CB MINGW64 /d/大學課程檔案/大二 
 下/系統程式/sp/hw3 (master)
 $ ./test.sh
@@ -93,3 +94,4 @@ power=9
 87> PSH
 88> EXIT
 exit(8) cycle = 88
+```
